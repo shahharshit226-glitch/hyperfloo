@@ -1,0 +1,8 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+html,body{overflow-x:clip}
+html{background:#ecebe6;color:#0c0c0b;scroll-behavior:smooth}
+body{font-family:var(--f),system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:#0c0c0b;color:#ecebe6}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mq{animation:mq 28s linear infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
