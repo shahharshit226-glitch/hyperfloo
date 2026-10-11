@@ -11,16 +11,30 @@ const NAV = ["WORK", "SERVICES", "ABOUT", "PROCESS"];
 const MQ = ["WEB DESIGN", "BRANDING", "AI", "AUTOMATION", "DIGITAL PRODUCTS"];
 const STEPS = ["DISCOVER", "DESIGN", "BUILD", "AUTOMATE", "LAUNCH"];
 const TECH = ["REACT", "NEXT.JS", "TYPESCRIPT", "PYTHON", "FASTAPI", "SUPABASE", "NODE", "MONGODB", "AI", "AUTOMATION"];
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xzedgyjk";
 const Label = ({ t }: { t: string }) => <p className="mb-8 text-xs tracking-[.2em]">{t}</p>;
 
 export default function Page() {
   const [ready, setReady] = useState(false);
   const [svc, setSvc] = useState(0);
   const [menu, setMenu] = useState(false);
-  const send = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); const form = new FormData(e.currentTarget);
-    const d = Object.fromEntries(["name", "email", "business", "need", "budget", "details"].map(k => [k, String(form.get(k) ?? "")])) as Record<string, string>;
-    location.href = `mailto:${EMAIL}?subject=${encodeURIComponent("Project inquiry — " + d.name)}&body=${encodeURIComponent(Object.entries(d).map(([k, v]) => `${k.toUpperCase()}: ${v}`).join("\n"))}`;
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const send = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus("sending");
+    const form = e.currentTarget;
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (!response.ok) throw new Error("Form submission failed");
+      form.reset();
+      setFormStatus("success");
+    } catch {
+      setFormStatus("error");
+    }
   };
   const input = "w-full border-b border-paper/30 bg-transparent py-4 text-sm outline-none placeholder:text-paper/40 focus:border-paper";
   return <>
@@ -127,7 +141,10 @@ export default function Page() {
           <input name="business" placeholder="BUSINESS" className={input} />
           <select name="need" className={input + " [&>option]:text-ink"}>{["Website", "Branding", "Creative design", "Automation", "AI solution", "Custom product / MVP"].map(o => <option key={o}>{o}</option>)}</select>
           <input name="budget" placeholder="BUDGET" className={input} /><textarea name="details" rows={4} placeholder="PROJECT DETAILS" className={input} />
-          <div><SlideUp label="SEND INQUIRY" dark /></div>
+          <div className="flex flex-wrap items-center gap-5"><SlideUp label={formStatus === "sending" ? "SENDING" : "SEND INQUIRY"} dark />
+            {formStatus === "success" && <span className="text-xs tracking-[.12em] text-paper/70" aria-live="polite">INQUIRY SENT</span>}
+            {formStatus === "error" && <span className="text-xs tracking-[.12em] text-red-300" aria-live="polite">PLEASE TRY AGAIN</span>}
+          </div>
         </form>
       </section>
 

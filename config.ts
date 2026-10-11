@@ -1,5 +1,5 @@
 // ⚙️ Change the studio name here — used in intro, nav, footer, metadata.
-export const AGENCY_NAME = "HYPERFLOW";
+export const AGENCY_NAME = "HYPERFLOO";
 export const EMAIL = "shahharshit226@gmail.com";
 export const TZ = "Asia/Kathmandu";
 export const SOCIALS = [["GITHUB","https://github.com/shahharshit226-glitch"],["LINKEDIN","https://www.linkedin.com/in/harshitshah506"]];
