@@ -52,7 +52,7 @@ export default function Page() {
         <Paint />
         <ScrollText lines={["WE BUILD", "DIGITAL", "THINGS."]} className="text-[17vw] md:text-[13vw]" />
         <div className="mt-12 flex flex-col justify-between gap-8 md:flex-row md:items-end">
-          <p className="max-w-sm text-sm leading-relaxed">We design and build websites, brands, intelligent systems and automations for businesses ready to move forward.</p>
+          <p className="max-w-sm text-sm leading-relaxed">We design and build websites, web and mobile apps, brand identities, intelligent systems and business automations for companies ready to solve real problems and move forward.</p>
           <div className="flex flex-wrap gap-3"><SlideUp label="START A PROJECT" href="#contact" /><SlideUp label="VIEW OUR WORK" href="#work" /></div>
         </div>
         <Clock className="mt-10 text-[10px] tracking-[.18em] md:hidden" />
@@ -129,7 +129,7 @@ export default function Page() {
 
       <section id="about" className="px-5 pb-32 md:px-10">
         <ScrollText lines={["SMALL STUDIO.", "BIG DIGITAL THINKING."]} className="text-[9vw]" />
-        <p className="mt-12 max-w-lg text-sm leading-relaxed">A focused independent studio. Founder of ResaleBrt, a live local marketplace in Biratnagar, and developer of the Elabs Society website at KIIT University. We build real products and ship them.</p>
+        <p className="mt-12 max-w-lg text-sm leading-relaxed">A focused independent studio. Founder of ResaleBrt, a live local marketplace in Biratnagar, and developer of the Elabs Society website at KIIT University. We build real products and ship them. <a href="https://harshitshah.com.np" target="_blank" rel="noreferrer" className="underline underline-offset-4">Meet the owner ↗</a></p>
         <p className="mt-16 text-3xl font-medium leading-tight tracking-tight md:text-6xl">{TECH.join("  /  ")}</p>
       </section>
 
