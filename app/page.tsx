@@ -65,7 +65,7 @@ export default function Page() {
       <section className="px-5 py-32 md:px-10">
         <Label t="01 — WHAT WE DO" />
         <ScrollText lines={["WE TURN IDEAS", "INTO DIGITAL", "EXPERIENCES."]} className="text-[10vw]" />
-        <p className="mt-12 max-w-md text-sm leading-relaxed md:ml-auto">We combine design, development, automation and AI to create digital experiences that are useful, memorable and built for real businesses.</p>
+        <p className="mt-12 max-w-md text-sm leading-relaxed md:ml-auto">We combine custom website development, web and mobile app development, responsive web design, workflow automation and AI to solve practical business problems.</p>
       </section>
 
       <section id="work" className="px-5 pb-24 md:px-10">
