@@ -58,7 +58,7 @@ export default function L({ children }: { children: React.ReactNode }) {
     name: AGENCY_NAME,
     url: siteUrl,
     description: "Nepal-based website, web app, mobile app, automation, web design and brand identity studio for growing businesses.",
-    email: "shahharshit226@gmail.com",
+    email: "hyperfloo.online@gmail.com",
     areaServed: ["Nepal", "Worldwide"],
     serviceType: ["Custom website development", "Web application development", "Mobile app development", "Business process automation", "Responsive web design", "Logo design", "Brand identity", "AI solutions"],
     sameAs: ["https://github.com/shahharshit226-glitch", "https://www.linkedin.com/in/harshitshah506"],

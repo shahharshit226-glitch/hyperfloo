@@ -1,6 +1,6 @@
 // ⚙️ Change the studio name here — used in intro, nav, footer, metadata.
 export const AGENCY_NAME = "HYPERFLOO";
-export const EMAIL = "shahharshit226@gmail.com";
+export const EMAIL = "hyperfloo.online@gmail.com";
 export const TZ = "Asia/Kathmandu";
 export const SOCIALS = [["GITHUB","https://github.com/shahharshit226-glitch"],["LINKEDIN","https://www.linkedin.com/in/harshitshah506"]];
 // Real projects from the portfolio. Add screenshots to /public/work/<slug>.png
